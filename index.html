@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lucca Viganon Periotto | Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- React via CDN -->
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo"><span class="nl">‹ </span><span class="na">L</span>ucca<span class="ns"> /›</span></a>
+  <ul class="nav-links">
+    <li><a href="#home" class="active">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#services">services</a></li>
+  </ul>
+  <div class="nav-actions" id="nav-actions-root"></div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="mobile-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<section id="home">
+  <div class="h-dots"></div><div class="h-sweep"></div><div class="h-wave"></div><div class="h-left"></div>
+  <div class="h-particles" id="particles"></div>
+
+  <!-- Plant Left -->
+  <div class="hero-plant hero-plant--left">
+    <svg width="520" height="600" viewBox="0 0 520 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- FROND A top — long arching down-left with dense leaflets -->
+      <g class="plant-leaf pl-l1">
+        <path d="M420 570 C385 525 345 478 300 432 C258 389 212 352 164 320 C124 293 80 272 40 258 C20 251 4 248 0 248" stroke="rgba(62,220,176,0.5)" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+        <!-- above leaflets -->
+        <path d="M403 555 C390 532 375 507 358 484" stroke="rgba(62,220,176,0.32)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M385 537 C370 513 353 487 334 463" stroke="rgba(62,220,176,0.31)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M366 517 C349 492 331 466 311 441" stroke="rgba(62,220,176,0.30)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M345 496 C327 470 308 443 286 418" stroke="rgba(62,220,176,0.29)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M323 474 C304 447 284 419 261 394" stroke="rgba(62,220,176,0.28)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M299 450 C279 422 258 394 234 369" stroke="rgba(62,220,176,0.27)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M274 425 C253 397 231 369 206 344" stroke="rgba(62,220,176,0.26)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M248 399 C226 371 203 343 177 318" stroke="rgba(62,220,176,0.25)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M220 372 C198 344 174 316 148 292" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M192 346 C169 318 144 291 117 267" stroke="rgba(62,220,176,0.23)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M163 320 C140 292 115 266 87 243" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M134 295 C111 268 85 243 57 221" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M105 271 C82 245 56 221 28 200" stroke="rgba(62,220,176,0.17)" stroke-width="1" stroke-linecap="round"/>
+        <!-- below leaflets -->
+        <path d="M398 548 C410 523 417 496 418 468" stroke="rgba(62,220,176,0.30)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M379 528 C392 502 399 474 399 446" stroke="rgba(62,220,176,0.29)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M359 507 C373 480 380 452 379 424" stroke="rgba(62,220,176,0.28)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M338 485 C353 457 359 429 358 401" stroke="rgba(62,220,176,0.27)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M315 461 C331 433 337 404 335 376" stroke="rgba(62,220,176,0.26)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M291 436 C308 408 313 379 310 351" stroke="rgba(62,220,176,0.25)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M265 410 C283 382 287 353 284 325" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M239 384 C257 356 261 327 257 299" stroke="rgba(62,220,176,0.23)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M211 357 C230 329 233 300 228 272" stroke="rgba(62,220,176,0.22)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M182 330 C202 302 204 273 198 245" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M153 304 C173 277 174 248 167 220" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M123 279 C144 252 144 223 136 196" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M93 255 C114 229 113 200 104 174" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M63 233 C84 207 82 179 72 153" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M420 570 C398 548 379 528 359 507 C338 485 315 461 291 436 C265 410 239 384 211 357 C182 330 153 304 123 279 C93 255 63 233 38 214 C55 228 78 246 103 268 C131 292 160 320 189 349 C218 379 246 410 272 440 C297 469 320 497 341 523 C360 546 378 566 395 580 Z" fill="rgba(62,220,176,0.055)"/>
+      </g>
+
+      <!-- FROND B — lower, drooping more, like second leaf in photo -->
+      <g class="plant-leaf pl-l2">
+        <path d="M440 575 C405 548 365 524 322 505 C278 485 232 470 184 460 C142 451 98 447 56 447 C30 447 8 450 0 454" stroke="rgba(62,220,176,0.46)" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+        <!-- above leaflets -->
+        <path d="M422 562 C407 537 390 511 371 487" stroke="rgba(62,220,176,0.28)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M402 549 C386 523 367 496 347 472" stroke="rgba(62,220,176,0.27)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M381 536 C363 509 343 481 321 457" stroke="rgba(62,220,176,0.26)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M357 522 C338 495 317 467 294 443" stroke="rgba(62,220,176,0.25)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M333 509 C312 482 289 454 265 430" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M306 496 C284 469 260 441 235 418" stroke="rgba(62,220,176,0.23)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M278 484 C255 458 230 430 204 408" stroke="rgba(62,220,176,0.22)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M248 473 C224 447 198 420 172 398" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M216 463 C192 438 165 412 138 391" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M183 454 C158 430 131 406 103 386" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M149 447 C124 424 96 401 68 382" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M114 441 C89 420 61 398 33 381" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <!-- below leaflets -->
+        <path d="M417 557 C426 531 430 503 428 475" stroke="rgba(62,220,176,0.26)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M396 544 C406 517 410 489 407 461" stroke="rgba(62,220,176,0.25)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M374 531 C385 503 388 475 385 447" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M350 517 C362 489 364 461 360 433" stroke="rgba(62,220,176,0.23)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M325 504 C338 475 339 447 334 419" stroke="rgba(62,220,176,0.22)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M298 491 C312 462 312 434 306 406" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M269 480 C284 451 283 423 276 396" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M239 469 C255 440 253 412 245 385" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M207 460 C224 431 221 403 212 377" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M174 452 C192 423 188 395 178 369" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M140 445 C159 417 154 389 143 364" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M105 439 C125 412 119 385 107 360" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M440 575 C417 557 396 544 374 531 C350 517 325 504 298 491 C269 480 239 469 207 460 C174 452 140 445 105 439 C76 434 46 432 22 433 C46 436 76 441 108 449 C141 458 175 469 208 481 C240 493 270 507 298 521 C325 534 352 548 376 560 C396 570 417 578 432 584 Z" fill="rgba(62,220,176,0.05)"/>
+      </g>
+
+      <!-- FROND C — mid angle between the two -->
+      <g class="plant-leaf pl-l3">
+        <path d="M430 572 C400 538 363 500 322 464 C282 429 238 398 190 372 C148 349 102 332 58 322 C32 316 8 314 0 316" stroke="rgba(62,220,176,0.38)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <path d="M412 557 C397 530 380 502 360 476" stroke="rgba(62,220,176,0.22)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M392 540 C375 512 357 484 336 458" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M370 522 C352 494 332 465 310 439" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M347 503 C328 474 307 445 284 420" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M322 483 C302 454 280 424 256 399" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M296 462 C275 433 252 403 227 378" stroke="rgba(62,220,176,0.17)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M268 440 C247 411 223 381 197 357" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M239 418 C218 389 193 360 166 336" stroke="rgba(62,220,176,0.15)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M209 395 C188 367 162 339 135 315" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M178 373 C157 346 131 319 103 296" stroke="rgba(62,220,176,0.13)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M146 352 C125 326 99 300 71 278" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <!-- below -->
+        <path d="M407 550 C419 523 424 494 424 465" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M386 532 C399 504 404 475 403 446" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M363 513 C377 485 381 456 379 427" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M339 493 C354 465 357 436 354 407" stroke="rgba(62,220,176,0.17)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M313 472 C329 444 331 415 327 386" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M286 450 C303 422 304 393 299 364" stroke="rgba(62,220,176,0.15)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M258 428 C276 400 276 371 270 342" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M228 405 C247 378 247 349 240 321" stroke="rgba(62,220,176,0.13)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M198 383 C218 356 217 327 209 300" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M167 361 C187 335 185 306 176 280" stroke="rgba(62,220,176,0.11)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M135 340 C156 315 153 286 143 261" stroke="rgba(62,220,176,0.10)" stroke-width="1" stroke-linecap="round"/>
+      </g>
+
+    </svg>
+  </div>
+
+  <!-- Plant Right (mirrored) -->
+  <div class="hero-plant hero-plant--right">
+    <svg width="520" height="600" viewBox="0 0 520 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <!-- FROND A top mirrored -->
+      <g class="plant-leaf pl-l1">
+        <path d="M100 570 C135 525 175 478 220 432 C262 389 308 352 356 320 C396 293 440 272 480 258 C500 251 516 248 520 248" stroke="rgba(62,220,176,0.5)" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+        <path d="M117 555 C130 532 145 507 162 484" stroke="rgba(62,220,176,0.32)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M135 537 C150 513 167 487 186 463" stroke="rgba(62,220,176,0.31)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M154 517 C171 492 189 466 209 441" stroke="rgba(62,220,176,0.30)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M175 496 C193 470 212 443 234 418" stroke="rgba(62,220,176,0.29)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M197 474 C216 447 236 419 259 394" stroke="rgba(62,220,176,0.28)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M221 450 C241 422 262 394 286 369" stroke="rgba(62,220,176,0.27)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M246 425 C267 397 289 369 314 344" stroke="rgba(62,220,176,0.26)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M272 399 C294 371 317 343 343 318" stroke="rgba(62,220,176,0.25)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M300 372 C322 344 346 316 372 292" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M328 346 C351 318 376 291 403 267" stroke="rgba(62,220,176,0.23)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M357 320 C380 292 405 266 433 243" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M386 295 C409 268 435 243 463 221" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M415 271 C438 245 464 221 492 200" stroke="rgba(62,220,176,0.17)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M122 548 C110 523 103 496 102 468" stroke="rgba(62,220,176,0.30)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M141 528 C128 502 121 474 121 446" stroke="rgba(62,220,176,0.29)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M161 507 C147 480 140 452 141 424" stroke="rgba(62,220,176,0.28)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M182 485 C167 457 161 429 162 401" stroke="rgba(62,220,176,0.27)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M205 461 C189 433 183 404 185 376" stroke="rgba(62,220,176,0.26)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M229 436 C212 408 207 379 210 351" stroke="rgba(62,220,176,0.25)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M255 410 C237 382 233 353 236 325" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M281 384 C263 356 259 327 263 299" stroke="rgba(62,220,176,0.23)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M309 357 C290 329 287 300 292 272" stroke="rgba(62,220,176,0.22)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M338 330 C318 302 316 273 322 245" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M367 304 C347 277 346 248 353 220" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M397 279 C376 252 376 223 384 196" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M427 255 C406 229 407 200 416 174" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M457 233 C436 207 438 179 448 153" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M100 570 C122 548 141 528 161 507 C182 485 205 461 229 436 C255 410 281 384 309 357 C338 330 367 304 397 279 C427 255 457 233 482 214 C465 228 442 246 417 268 C389 292 360 320 331 349 C302 379 274 410 248 440 C223 469 200 497 179 523 C160 546 142 566 125 580 Z" fill="rgba(62,220,176,0.055)"/>
+      </g>
+
+      <!-- FROND B mirrored -->
+      <g class="plant-leaf pl-l2">
+        <path d="M80 575 C115 548 155 524 198 505 C242 485 288 470 336 460 C378 451 422 447 464 447 C490 447 512 450 520 454" stroke="rgba(62,220,176,0.46)" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+        <path d="M98 562 C113 537 130 511 149 487" stroke="rgba(62,220,176,0.28)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M118 549 C134 523 153 496 173 472" stroke="rgba(62,220,176,0.27)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M139 536 C157 509 177 481 199 457" stroke="rgba(62,220,176,0.26)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M163 522 C182 495 203 467 226 443" stroke="rgba(62,220,176,0.25)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M187 509 C208 482 231 454 257 430" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M214 496 C236 469 262 441 289 418" stroke="rgba(62,220,176,0.23)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M242 484 C266 458 293 430 320 408" stroke="rgba(62,220,176,0.22)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M272 473 C297 447 324 420 352 398" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M304 463 C329 438 357 412 385 391" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M337 454 C362 430 390 406 418 386" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M370 447 C396 424 423 401 452 382" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M405 441 C431 420 459 398 487 381" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M103 557 C94 531 90 503 92 475" stroke="rgba(62,220,176,0.26)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M124 544 C114 517 110 489 113 461" stroke="rgba(62,220,176,0.25)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M146 531 C135 503 132 475 135 447" stroke="rgba(62,220,176,0.24)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M170 517 C158 489 156 461 160 433" stroke="rgba(62,220,176,0.23)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M195 504 C182 475 181 447 186 419" stroke="rgba(62,220,176,0.22)" stroke-width="1.1" stroke-linecap="round"/>
+        <path d="M222 491 C208 462 208 434 214 406" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M251 480 C236 451 237 423 244 396" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M281 469 C265 440 267 412 275 385" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M313 460 C296 431 299 403 308 377" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M346 452 C328 423 332 395 342 369" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M380 445 C361 416 366 388 377 362" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M415 439 C395 410 401 382 413 357" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M80 575 C103 557 124 544 146 531 C170 517 195 504 222 491 C251 480 281 469 313 460 C346 452 380 445 415 439 C444 434 474 432 498 433 C474 436 444 441 412 449 C379 458 345 469 312 481 C280 493 250 507 222 521 C195 534 169 548 144 560 C124 570 103 578 88 584 Z" fill="rgba(62,220,176,0.05)"/>
+      </g>
+
+      <!-- FROND C mirrored -->
+      <g class="plant-leaf pl-l3">
+        <path d="M90 572 C120 538 157 500 198 464 C238 429 282 398 330 372 C372 349 418 332 462 322 C488 316 512 314 520 316" stroke="rgba(62,220,176,0.38)" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        <path d="M108 557 C123 530 140 502 160 476" stroke="rgba(62,220,176,0.22)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M128 540 C145 512 163 484 184 458" stroke="rgba(62,220,176,0.21)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M150 522 C168 494 188 465 210 439" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M173 503 C192 474 213 445 236 420" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M198 483 C218 454 240 424 265 399" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M224 462 C245 433 268 403 294 378" stroke="rgba(62,220,176,0.17)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M252 440 C274 411 298 381 325 357" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M281 418 C303 389 328 360 355 336" stroke="rgba(62,220,176,0.15)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M311 395 C334 367 359 339 387 315" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M342 373 C365 346 391 319 418 296" stroke="rgba(62,220,176,0.13)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M374 352 C397 326 423 300 451 278" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M113 550 C101 523 96 494 96 465" stroke="rgba(62,220,176,0.20)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M134 532 C121 504 116 475 117 446" stroke="rgba(62,220,176,0.19)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M157 513 C143 485 139 456 141 427" stroke="rgba(62,220,176,0.18)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M181 493 C166 465 163 436 166 407" stroke="rgba(62,220,176,0.17)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M207 472 C191 444 189 415 193 386" stroke="rgba(62,220,176,0.16)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M234 450 C217 422 216 393 221 364" stroke="rgba(62,220,176,0.15)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M262 428 C244 400 244 371 250 342" stroke="rgba(62,220,176,0.14)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M292 405 C273 378 273 349 280 321" stroke="rgba(62,220,176,0.13)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M322 383 C302 356 303 327 311 300" stroke="rgba(62,220,176,0.12)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M353 361 C333 335 335 306 344 280" stroke="rgba(62,220,176,0.11)" stroke-width="1" stroke-linecap="round"/>
+        <path d="M385 340 C364 315 367 286 377 261" stroke="rgba(62,220,176,0.10)" stroke-width="1" stroke-linecap="round"/>
+      </g>
+
+    </svg>
+  </div>
+
+  <div class="h-content">
+    <h1 class="h-name">Lucca Viganon<br/>Periotto</h1>
+    <div class="h-tag">
+      <span class="h-tag-line"></span>
+      Full-Stack Developer
+      <span class="h-tag-line"></span>
+    </div>
+    <p class="h-desc">Web developer specializing in creating modern and efficient experiences.</p>
+    <div class="h-cta">
+      <a href="#projects" class="btn-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        SEE MY WORK
+      </a>
+    </div>
+    <div class="h-lang-switcher" id="hero-lang-root"></div>
+  </div>
+  <div class="h-scroll"><div class="h-line"></div><span>scroll</span></div>
+</section>
+
+<section id="about" class="section section-alt">
+  <div class="about-grid rv">
+    <div class="about-text">
+      <div class="s-eyebrow">‹ Sobre /›</div>
+      <h2 class="s-title" style="margin-bottom:1.6rem">Quem sou <span class="mono">eu</span></h2>
+      <p>Meu nome é <strong>Lucca Viganon Periotto</strong> e sou apaixonado por tecnologia, o que me levou a construir minha trajetória profissional na área de programação. Nos últimos <strong>quatro anos</strong>, venho me aprofundando nas principais ferramentas e tecnologias utilizadas pelo mercado, sempre buscando aplicar <strong>práticas ágeis</strong> no desenvolvimento de software.</p>
+      <p>Atualmente, estou no último ano da graduação em <strong>Análise e Desenvolvimento de Sistemas</strong> no Senai. Paralelamente à faculdade, atuo como <strong>freelancer</strong> em diferentes projetos e participo de iniciativas de <strong>código aberto</strong>, experiências que têm contribuído significativamente para meu crescimento técnico e para a consolidação da minha vivência prática na área de desenvolvimento.</p>
+    </div>
+    <div class="about-visual">
+      <div class="react-logo-wrap">
+        <svg class="react-svg" viewBox="-11.5 -10.232 23 20.463" xmlns="http://www.w3.org/2000/svg">
+          <!-- Orbit 1 -->
+          <ellipse class="react-orbit react-orbit-1" cx="0" cy="0" rx="11" ry="4.2" fill="none" stroke-width="1"/>
+          <!-- Orbit 2 -->
+          <ellipse class="react-orbit react-orbit-2" cx="0" cy="0" rx="11" ry="4.2" fill="none" stroke-width="1"/>
+          <!-- Orbit 3 -->
+          <ellipse class="react-orbit react-orbit-3" cx="0" cy="0" rx="11" ry="4.2" fill="none" stroke-width="1"/>
+          <!-- Nucleus -->
+          <circle class="react-nucleus" cx="0" cy="0" r="2.05"/>
+
+        </svg>
+        <div class="react-glow"></div>
+        <canvas class="react-particles-canvas" id="reactParticles"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS — novo layout tabela -->
+<section id="skills" class="section">
+  <div class="rv skills-title-wrap">
+    <div class="s-eyebrow">‹ Skills /›</div>
+    <h2 class="s-title" style="margin-bottom:2.8rem">Tecnologias & <span class="mono">Ferramentas</span></h2>
+  </div>
+
+  <div class="skills-grid rv">
+
+    <div class="skill-card">
+      <div class="sc-head">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <span class="sc-title">Front&#8209;End</span>
+      </div>
+      <div class="spills">
+        <span class="spill">HTML / CSS</span>
+        <span class="spill">JavaScript</span>
+        <span class="spill">React</span>
+        <span class="spill">Vite</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="sc-head">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <span class="sc-title">Back&#8209;End</span>
+      </div>
+      <div class="spills">
+        <span class="spill">Java</span>
+        <span class="spill">Spring Boot</span>
+        <span class="spill">Node.js</span>
+        <span class="spill">SQL</span>
+        <span class="spill">API REST</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="sc-head">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <span class="sc-title">DevOps &amp; Tools</span>
+      </div>
+      <div class="spills">
+        <span class="spill">Git</span>
+        <span class="spill">GitHub</span>
+        <span class="spill">VS Code</span>
+        <span class="spill">Figma</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="sc-head">
+        <div class="sc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <span class="sc-title">Banco de Dados</span>
+      </div>
+      <div class="spills">
+        <span class="spill">MySQL</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="projects" class="section section-alt">
+  <div class="proj-header rv">
+    <div>
+      <div class="s-eyebrow">‹ Projetos /›</div>
+      <h2 class="s-title">Meus <span class="mono">Trabalhos</span></h2>
+    </div>
+  </div>
+  <div class="proj-grid proj-grid--asymmetric">
+    <div class="proj-card proj-card--featured proj-card--cinema rv rv-d1" id="cinemaCard">
+      <!-- Imagem com overlay gradiente -->
+      <div class="proj-preview">
+        <img src="cinema-preview.png" alt="Sistema de Cinema Preview" class="proj-img"/>
+        <div class="proj-img-gradient"></div>
+        <div class="proj-chip--done">
+          <span class="proj-chip-dot"></span>
+          Concluído
+        </div>
+      </div>
+
+      <!-- Conteúdo principal -->
+      <div class="proj-cinema-body">
+        <div class="proj-cinema-meta">
+          <span class="proj-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Equipe de 4
+          </span>
+          <span class="proj-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            2024
+          </span>
+          <span class="proj-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Full-Stack
+          </span>
+        </div>
+
+        <h3 class="proj-cinema-title">Sistema de Gerenciamento de Cinema</h3>
+        <p class="proj-cinema-desc">Plataforma completa desenvolvida em equipe para atender uma demanda real. Inclui cadastro e gerenciamento de filmes, listagem dinâmica via API REST, sessões e compra de ingressos — com foco em escalabilidade e boas práticas.</p>
+
+        <div class="proj-tags proj-tags--cinema">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Vite</span>
+          <span class="proj-tag">Spring Boot</span>
+          <span class="proj-tag">API REST</span>
+          <span class="proj-tag">Java</span>
+        </div>
+
+        <div class="proj-cinema-actions">
+          <a href="https://github.com/Viganop/Cinema_Project" target="_blank" class="proj-btn proj-btn--github" id="githubBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            Ver Codigo
+          </a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7427869073184702465/?originTrackingId=xWsi8dMVEla0kUN6rYfCCA%3D%3D" target="_blank" class="proj-btn proj-btn--linkedin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            Ver Video
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Card Instituto do Movimento -->
+    <div class="proj-card proj-card--featured proj-card--movimento rv rv-d2" id="movimentoCard">
+      <!-- Imagem com overlay gradiente -->
+      <div class="proj-preview">
+        <img src="instituto-movimento.png" alt="Instituto do Movimento Preview" class="proj-img"/>
+        <div class="proj-img-gradient"></div>
+        <div class="proj-chip--wip">
+          <span class="proj-chip-dot proj-chip-dot--wip"></span>
+          Em Andamento
+        </div>
+      </div>
+
+      <!-- Conteúdo principal -->
+      <div class="proj-cinema-body">
+        <div class="proj-cinema-meta">
+          <span class="proj-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Time CoreSynk
+          </span>
+          <span class="proj-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            2025
+          </span>
+          <span class="proj-meta-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Full-Stack
+          </span>
+        </div>
+
+        <h3 class="proj-cinema-title">Instituto do Movimento | Website</h3>
+        <p class="proj-cinema-desc">Site institucional completo para clínica especializada em Pilates, Fisioterapia, Musculação, Clínica Funcional e RPG. Desenvolvemos uma plataforma moderna com agendamento online, apresentação dos serviços, área de depoimentos e integração com WhatsApp para facilitar o contato com pacientes.</p>
+
+        <div class="proj-tags proj-tags--cinema">
+          <span class="proj-tag">Next.js</span>
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">TailwindCSS</span>
+          <span class="proj-tag">Figma</span>
+        </div>
+
+        <div class="proj-cinema-actions">
+          <a href="#" target="_blank" class="proj-btn proj-btn--github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Ver Site
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="rv" style="text-align:center;margin-bottom:3rem">
+    <div class="s-eyebrow">‹ Serviços /›</div>
+    <h2 class="s-title">O que eu <span class="mono">ofereço</span></h2>
+  </div>
+  <div class="services-grid rv">
+
+    <div class="srv-card">
+      <div class="srv-icon srv-icon--accent">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <h3 class="srv-title">Criação de Sites</h3>
+      <p class="srv-desc">Criação de sites personalizados, sejam pessoais ou para diversos setores de negócio</p>
+    </div>
+
+    <div class="srv-card">
+      <div class="srv-icon srv-icon--accent">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3 class="srv-title">Sites Responsivos</h3>
+      <p class="srv-desc">Todos os sites são responsivos, para melhorar ainda mais a experiência do usuário em qualquer dispositivo.</p>
+    </div>
+
+    <div class="srv-card">
+      <div class="srv-icon srv-icon--accent">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><path d="M14 17h8M18 14v6"/></svg>
+      </div>
+      <h3 class="srv-title">Criação de APIs</h3>
+      <p class="srv-desc">Criação de APIs Rest seguras e experiência de integração com bancos de dados externos.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="contact" class="section">
+  <div class="contact-centered rv">
+    <div class="s-eyebrow" style="justify-content:center">‹ Contato /›</div>
+    <h2 class="s-title" style="text-align:center;margin-bottom:0.75rem">Vamos <span class="mono">Conversar</span></h2>
+    <p class="contact-tagline">Tem um projeto em mente ou quer bater um papo sobre tecnologia?<br>Me encontre em qualquer uma dessas plataformas.</p>
+    <div class="cinfo-grid-centered">
+      <a href="https://wa.me/5516997920301" target="_blank" class="cinfo cinfo-big">
+        <div class="cinfo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </div>
+        <div class="cinfo-text">
+          <span class="cinfo-label">WhatsApp</span>
+          <span class="cinfo-sub">Resposta rápida</span>
+        </div>
+        <svg class="cinfo-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/cdn-cgi/l/email-protection#cfa3baacacaebfaabda6a0bbbba08fa8a2aea6a3e1aca0a2" class="cinfo cinfo-big">
+        <div class="cinfo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="cinfo-text">
+          <span class="cinfo-label">Email</span>
+          <span class="cinfo-sub"><span class="__cf_email__" data-cfemail="a3cfd6c0c0c2d3c6d1caccd7d7cce3c4cec2cacf8dc0ccce">luccaperiotto@gmail.com</span></span>
+        </div>
+        <svg class="cinfo-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/luccaviganonperiotto/" target="_blank" class="cinfo cinfo-big">
+        <div class="cinfo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+        </div>
+        <div class="cinfo-text">
+          <span class="cinfo-label">LinkedIn</span>
+          <span class="cinfo-sub">/in/luccaviganonperiotto</span>
+        </div>
+        <svg class="cinfo-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://github.com/Viganop" target="_blank" class="cinfo cinfo-big">
+        <div class="cinfo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </div>
+        <div class="cinfo-text">
+          <span class="cinfo-label">GitHub</span>
+          <span class="cinfo-sub">github.com/Viganop</span>
+        </div>
+        <svg class="cinfo-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-lo
+  <div class="f-logo"><span class="ac">‹</span> Lucca <span class="ac">/›</span></div>
+  <p>Made with <span class="ac">❤</span> by Lucca Viganon Periotto</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+
+<!-- Appearance Panel mount -->
+<div id="appearance-panel-root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+const LANGS = ['PT', 'EN', 'ES'];
+const FLAGS = { PT: '🇧🇷', EN: '🇺🇸', ES: '🇪🇸' };
+
+const COLORS = [
+  { id: 'teal',   val: '#3edcb0', rgb: '62,220,176'   },
+  { id: 'blue',   val: '#3b82f6', rgb: '59,130,246'   },
+  { id: 'green',  val: '#22c55e', rgb: '34,197,94'    },
+  { id: 'pink',   val: '#ec4899', rgb: '236,72,153'   },
+  { id: 'orange', val: '#f97316', rgb: '249,115,22'   },
+  { id: 'cyan',   val: '#06b6d4', rgb: '6,182,212'    },
+  { id: 'red',    val: '#ef4444', rgb: '239,68,68'    },
+  { id: 'violet', val: '#8b5cf6', rgb: '139,92,246'   },
+  { id: 'amber',  val: '#fbbf24', rgb: '251,191,36'   },
+  { id: 'gray',   val: '#94a3b8', rgb: '148,163,184'  },
+];
+
+function applyTheme(mode, accentVal, accentRgb) {
+  const root = document.documentElement;
+  if (mode === 'light') {
+    root.style.setProperty('--bg',      '#f0f4f8');
+    root.style.setProperty('--bg2',     '#e2e8f0');
+    root.style.setProperty('--bg3',     '#cbd5e1');
+    root.style.setProperty('--white',   '#0f172a');
+    root.style.setProperty('--gray',    '#475569');
+    root.style.setProperty('--gray2',   '#94a3b8');
+    root.style.setProperty('--border2', 'rgba(0,0,0,0.1)');
+    document.body.setAttribute('data-theme', 'light');
+  } else {
+    root.style.setProperty('--bg',      '#0a0e1a');
+    root.style.setProperty('--bg2',     '#0d1220');
+    root.style.setProperty('--bg3',     '#111827');
+    root.style.setProperty('--white',   '#ffffff');
+    root.style.setProperty('--gray',    '#8892a4');
+    root.style.setProperty('--gray2',   '#4a5568');
+    root.style.setProperty('--border2', 'rgba(255,255,255,0.07)');
+    document.body.setAttribute('data-theme', 'dark');
+  }
+  if (accentVal) {
+    root.style.setProperty('--accent', accentVal);
+    if (accentRgb) root.style.setProperty('--accent-rgb', accentRgb);
+  }
+}
+
+function NavActions() {
+  const [langIdx, setLangIdx] = useState(0);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const lang = LANGS[langIdx];
+
+  return (
+    React.createElement(React.Fragment, null,
+
+      React.createElement('a', {
+        className: 'nav-contact-btn',
+        href: '#contact',
+        onClick: (e) => {
+          e.preventDefault();
+          const target = document.getElementById('contact');
+          if (!target) return;
+          const navH = document.querySelector('nav')?.offsetHeight || 70;
+          const targetY = target.getBoundingClientRect().top + window.scrollY - navH;
+          const startY = window.scrollY;
+          const diff = targetY - startY;
+          let startTime = null;
+          function easeInOutQuart(t) {
+            return t < 0.5 ? 8*t*t*t*t : 1 - Math.pow(-2*t+2,4)/2;
+          }
+          function step(ts) {
+            if (!startTime) startTime = ts;
+            const elapsed = ts - startTime;
+            const progress = Math.min(elapsed / 950, 1);
+            window.scrollTo(0, startY + diff * easeInOutQuart(progress));
+            if (elapsed < 950) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+      },
+        'Contato'
+      )
+    )
+  );
+}
+
+function AppearancePanel({ onClose }) {
+  const [mode, setMode] = useState('dark');
+  const [accent, setAccent] = useState('teal');
+  const panelRef = useRef(null);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (panelRef.current && !panelRef.current.contains(e.target)) {
+        const gearBtn = document.querySelector('.nav-pill--gear');
+        if (gearBtn && gearBtn.contains(e.target)) return;
+        onClose();
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [onClose]);
+
+  const handleMode = (m) => {
+    setMode(m);
+    const c = COLORS.find(c => c.id === accent);
+    applyTheme(m, c?.val, c?.rgb);
+  };
+
+  const handleAccent = (c) => {
+    setAccent(c.id);
+    applyTheme(mode, c.val, c.rgb);
+  };
+
+  const panel = React.createElement('div', { className: 'appearance-panel', ref: panelRef },
+    React.createElement('div', { className: 'ap-header' },
+      React.createElement('span', { className: 'ap-title' }, 'Appearance'),
+      React.createElement('button', { className: 'ap-close', onClick: onClose },
+        React.createElement('svg', { width: 14, height: 14, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2.5' },
+          React.createElement('line', { x1: 18, y1: 6, x2: 6, y2: 18 }),
+          React.createElement('line', { x1: 6, y1: 6, x2: 18, y2: 18 })
+        )
+      )
+    ),
+    React.createElement('div', { className: 'ap-section' },
+      React.createElement('div', { className: 'ap-label' }, 'MODE'),
+      React.createElement('div', { className: 'ap-mode-row' },
+        ['light', 'dark'].map(m =>
+          React.createElement('button', {
+            key: m,
+            className: `ap-mode-btn${mode === m ? ' ap-mode-btn--active' : ''}`,
+            onClick: () => handleMode(m)
+          },
+            React.createElement('span', { className: 'ap-mode-icon' },
+              m === 'light'
+                ? React.createElement('svg', { width: 18, height: 18, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+                    React.createElement('circle', { cx: 12, cy: 12, r: 5 }),
+                    React.createElement('line', { x1: 12, y1: 1, x2: 12, y2: 3 }),
+                    React.createElement('line', { x1: 12, y1: 21, x2: 12, y2: 23 }),
+                    React.createElement('line', { x1: 4.22, y1: 4.22, x2: 5.64, y2: 5.64 }),
+                    React.createElement('line', { x1: 18.36, y1: 18.36, x2: 19.78, y2: 19.78 }),
+                    React.createElement('line', { x1: 1, y1: 12, x2: 3, y2: 12 }),
+                    React.createElement('line', { x1: 21, y1: 12, x2: 23, y2: 12 })
+                  )
+                : React.createElement('svg', { width: 18, height: 18, viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: '2' },
+                    React.createElement('path', { d: 'M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z' })
+                  )
+            ),
+            React.createElement('span', { className: 'ap-mode-label' }, m === 'light' ? 'Light' : 'Dark')
+          )
+        )
+      )
+    ),
+    React.createElement('div', { className: 'ap-section' },
+      React.createElement('div', { className: 'ap-label' }, 'COLOR'),
+      React.createElement('div', { className: 'ap-color-grid' },
+        COLORS.map(c =>
+          React.createElement('button', {
+            key: c.id,
+            className: `ap-color-swatch${accent === c.id ? ' ap-color-swatch--active' : ''}`,
+            style: { background: c.val },
+            title: c.id,
+            onClick: () => handleAccent(c)
+          },
+            accent === c.id && React.createElement('svg', { width: 12, height: 12, viewBox: '0 0 24 24', fill: 'none', stroke: 'white', strokeWidth: '3' },
+              React.createElement('polyline', { points: '20 6 9 17 4 12' })
+            )
+          )
+        )
+      )
+    )
+  );
+
+  return ReactDOM.createPortal(panel, document.getElementById('appearance-panel-root'));
+}
+
+ReactDOM.createRoot(document.getElementById('nav-actions-root')).render(
+  React.createElement(NavActions)
+);
+
+/* Hero language switcher */
+function HeroLang() {
+  const langs = ['PT', 'EN', 'ES'];
+  const [langIdx, setLangIdx] = React.useState(0);
+  const current = langs[langIdx];
+  return React.createElement('button', {
+    className: 'hero-lang-btn',
+    onClick: () => setLangIdx(i => (i + 1) % langs.length),
+    title: 'Trocar idioma'
+  },
+    React.createElement('svg', {
+      className: 'hero-lang-globe',
+      width: '16', height: '16', viewBox: '0 0 24 24',
+      fill: 'none', stroke: 'currentColor', strokeWidth: '2',
+      strokeLinecap: 'round', strokeLinejoin: 'round'
+    },
+      React.createElement('circle', { cx: '12', cy: '12', r: '10' }),
+      React.createElement('line', { x1: '2', y1: '12', x2: '22', y2: '12' }),
+      React.createElement('path', { d: 'M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z' })
+    ),
+    React.createElement('span', { className: 'hero-lang-code' }, current)
+  );
+}
+
+const heroLangRoot = document.getElementById('hero-lang-root');
+if (heroLangRoot) {
+  ReactDOM.createRoot(heroLangRoot).render(React.createElement(HeroLang));
+}
+</script>
+
+<script src="script.js"></script>
+<script>
+(function() {
+  var btn = document.getElementById('navHamburger');
+  var menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    btn.classList.toggle('is-open');
+    menu.classList.toggle('is-open');
+    document.body.classList.toggle('menu-open');
+  });
+  menu.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      btn.classList.remove('is-open');
+      menu.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+})();
+</script>
+<script>
+/* ============ REACT SYMBOL PARTICLES ============ */
+(function() {
+  const canvas = document.getElementById('reactParticles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const W = 280, H = 280;
+  canvas.width = W;
+  canvas.height = H;
+
+  const CX = W / 2, CY = H / 2;
+  const RADIUS = 100; // spawn area radius around center
+
+  const NUM = 28;
+  const particles = [];
+
+  function rand(min, max) { return min + Math.random() * (max - min); }
+
+  for (let i = 0; i < NUM; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const dist  = rand(20, RADIUS);
+    particles.push({
+      x: CX + Math.cos(angle) * dist,
+      y: CY + Math.sin(angle) * dist,
+      vx: rand(-0.18, 0.18),
+      vy: rand(-0.18, 0.18),
+      size: rand(1, 2.2),
+      alpha: rand(0.15, 0.55),
+      alphaDir: Math.random() > 0.5 ? 1 : -1,
+      alphaSpeed: rand(0.003, 0.009),
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    particles.forEach(p => {
+      // move
+      p.x += p.vx;
+      p.y += p.vy;
+
+      // fade in/out
+      p.alpha += p.alphaSpeed * p.alphaDir;
+      if (p.alpha > 0.6 || p.alpha < 0.06) p.alphaDir *= -1;
+
+      // keep inside radius — soft bounce
+      const dx = p.x - CX, dy = p.y - CY;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist > RADIUS) {
+        p.vx -= dx / dist * 0.04;
+        p.vy -= dy / dist * 0.04;
+      }
+
+      // draw dot
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(97, 219, 251, ${p.alpha})`;
+      ctx.fill();
+
+      // draw faint connecting lines to nearby particles
+      particles.forEach(q => {
+        if (q === p) return;
+        const ex = p.x - q.x, ey = p.y - q.y;
+        const d = Math.sqrt(ex * ex + ey * ey);
+        if (d < 48) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineT
