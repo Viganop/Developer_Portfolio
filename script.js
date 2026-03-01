@@ -179,25 +179,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-/* ============ TYPING EFFECT ============ */
-const roles    = ['Full-Stack Developer', 'Problem Solver', 'Open Source Contributor', 'Estudante ADS — Senai'];
-const typingEl = document.getElementById('typingText');
-let rIdx = 0, cIdx = 0, deleting = false;
+/* ============ ROLE TEXT ============ */
+const ROLES_BY_LANG = {
+  PT: 'Desenvolvedor Full-Stack',
+  EN: 'Full-Stack Developer',
+  ES: 'Desarrollador Full-Stack',
+};
 
-function type() {
-  const word = roles[rIdx];
-  if (!deleting) {
-    typingEl.textContent = word.slice(0, cIdx + 1);
-    cIdx++;
-    if (cIdx === word.length) { deleting = true; setTimeout(type, 1900); return; }
-  } else {
-    typingEl.textContent = word.slice(0, cIdx - 1);
-    cIdx--;
-    if (cIdx === 0) { deleting = false; rIdx = (rIdx + 1) % roles.length; }
-  }
-  setTimeout(type, deleting ? 45 : 75);
+const typingEl = document.getElementById('typingText');
+
+function updateRoleText() {
+  const lang = (window.__I18N && window.__I18N.current) || 'PT';
+  if (typingEl) typingEl.textContent = ROLES_BY_LANG[lang] || ROLES_BY_LANG['PT'];
 }
-setTimeout(type, 1000);
+
+updateRoleText();
+window.addEventListener('i18n:change', updateRoleText);
 
 /* ============ SCROLL REVEAL ============ */
 const rvObs = new IntersectionObserver(entries => {
@@ -272,22 +269,6 @@ function closeCard(event, btn) {
   btn.closest('.proj-card').classList.remove('is-open');
 }
 
-/* ============ SCROLL PROGRESS BAR — throttled ============ */
-(function() {
-  const bar = document.createElement('div');
-  bar.id = 'scroll-progress';
-  document.body.appendChild(bar);
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-      bar.style.width = Math.min(pct, 100) + '%';
-      ticking = false;
-    });
-  }, { passive: true });
-})();
 
 /* ============ NUMBER COUNTER ANIMATION ============ */
 (function() {
@@ -337,4 +318,59 @@ function closeCard(event, btn) {
     scrollY = window.scrollY;
     if (!rafPending) { rafPending = true; requestAnimationFrame(applyParallax); }
   }, { passive: true });
+})();
+
+
+
+/* ============ CAR PAINT GLOSS — proj-cards ============ */
+(function () {
+
+  // Suavização via lerp para o reflexo seguir o mouse com inércia
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  document.querySelectorAll('.proj-card').forEach(card => {
+    let curX = 80, curY = 80;   // posição atual (%) — inicia no canto inf direito
+    let tgtX = 80, tgtY = 80;   // posição alvo
+    let hovered  = false;
+    let rafId    = null;
+
+    function loop() {
+      // Lerp suave — o brilho "escorrega" atrás do cursor como reflexo real
+      curX = lerp(curX, tgtX, 0.072);
+      curY = lerp(curY, tgtY, 0.072);
+
+      card.style.setProperty('--mx', curX.toFixed(2) + '%');
+      card.style.setProperty('--my', curY.toFixed(2) + '%');
+
+      const stillMoving =
+        Math.abs(curX - tgtX) > 0.05 ||
+        Math.abs(curY - tgtY) > 0.05;
+
+      if (hovered || stillMoving) {
+        rafId = requestAnimationFrame(loop);
+      } else {
+        rafId = null;
+      }
+    }
+
+    card.addEventListener('mouseenter', () => {
+      hovered = true;
+      if (!rafId) rafId = requestAnimationFrame(loop);
+    });
+
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      tgtX = ((e.clientX - rect.left) / rect.width)  * 100;
+      tgtY = ((e.clientY - rect.top)  / rect.height) * 100;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      hovered = false;
+      // Volta lentamente ao canto inferior direito
+      tgtX = 92;
+      tgtY = 95;
+      if (!rafId) rafId = requestAnimationFrame(loop);
+    });
+  });
+
 })();
