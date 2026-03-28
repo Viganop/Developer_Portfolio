@@ -432,13 +432,20 @@ nav::after {
   letter-spacing:0.22em; text-transform:uppercase;
   color:var(--accent); margin-bottom:0.5rem;
 }
-.s-eyebrow::before { content:''; width:4px; height:20px; background: rgba(255,255,255,0.25); border-radius:2px; }
+.s-eyebrow-text { color: var(--white); }
 
 .s-title {
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
   font-weight:800; letter-spacing:-1px; color:var(--white); line-height:1.1;
 }
-.s-title .mono { font-family:var(--mono); color:var(--accent); font-weight:400; font-size:0.68em; }
+.s-title .mono {
+  font-family: var(--sans);
+  color: var(--accent);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 0.92em;
+  letter-spacing: -0.5px;
+}
 
 /* Reveal */
 .rv { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s ease; }
