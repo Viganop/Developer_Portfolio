@@ -361,7 +361,7 @@
     </div>
     <div class="h-lang-switcher" id="hero-lang-root"></div>
   </div>
-  <div class="h-scroll"><div class="h-line"></div><span>scroll</span></div>
+  <div class="h-scroll"><span>Veja mais</span><div class="h-line"></div></div>
 </section>
 
 <section id="about" class="section section-alt">
@@ -371,6 +371,21 @@
       <h2 class="s-title" style="margin-bottom:1.6rem" data-i18n="about.title">Quem sou <span class="mono">eu</span></h2>
       <p data-i18n="about.p1">Meu nome é <strong>Lucca Viganon Periotto</strong> e sou apaixonado por tecnologia, o que me levou a construir minha trajetória profissional na área de programação. Nos últimos <strong>quatro anos</strong>, venho me aprofundando nas principais ferramentas e tecnologias utilizadas pelo mercado, sempre buscando aplicar <strong>práticas ágeis</strong> no desenvolvimento de software.</p>
       <p data-i18n="about.p2">Atualmente, estou no último ano da graduação em <strong>Análise e Desenvolvimento de Sistemas</strong> no Senai. Paralelamente à faculdade, atuo como <strong>freelancer</strong> em diferentes projetos e participo de iniciativas de <strong>código aberto</strong>, experiências que têm contribuído significativamente para meu crescimento técnico e para a consolidação da minha vivência prática na área de desenvolvimento.</p>
+
+      <div class="about-stats">
+        <div class="about-stat rv">
+          <span class="about-stat-num"><span data-count="4" data-suffix="+">4+</span></span>
+          <span class="about-stat-label">Anos de<br>experiência</span>
+        </div>
+        <div class="about-stat rv rv-d1">
+          <span class="about-stat-num"><span data-count="10" data-suffix="+">10+</span></span>
+          <span class="about-stat-label">Projetos<br>entregues</span>
+        </div>
+        <div class="about-stat rv rv-d2">
+          <span class="about-stat-num"><span data-count="8" data-suffix="+">8+</span></span>
+          <span class="about-stat-label">Tecnologias<br>dominadas</span>
+        </div>
+      </div>
     </div>
     <div class="about-visual">
       <div class="react-logo-wrap">
@@ -628,7 +643,7 @@
 
 <div class="section-divider"></div>
 
-<section id="contact" class="section" style="position:relative;overflow:hidden;">
+<section id="contact" class="section section-alt" style="position:relative;overflow:hidden;">
   <canvas id="contactParticles" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
   <div class="contact-centered rv" style="position:relative;z-index:1;">
     <div class="s-eyebrow" style="justify-content:center" data-i18n="contact.eyebrow">‹ Contato /›</div>
@@ -892,7 +907,7 @@ function NavActions() {
           requestAnimationFrame(step);
         }
       },
-        'Contato'
+        'Contate agora'
       )
     )
   );
@@ -1025,7 +1040,7 @@ if (mobileContactRoot) {
         }
         requestAnimationFrame(step);
       }
-    }, 'Contato');
+    }, 'Contate agora');
   }
   ReactDOM.createRoot(mobileContactRoot).render(React.createElement(MobileContactBtn));
 }
