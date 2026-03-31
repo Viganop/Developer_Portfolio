@@ -374,3 +374,98 @@ function closeCard(event, btn) {
   });
 
 })();
+
+/* ============ CONTACT BOTTOM RISING PARTICLES ============ */
+(function () {
+  var canvas = document.getElementById('contactBottomParticles');
+  if (!canvas) return;
+  var section = document.getElementById('contact');
+  var ctx = canvas.getContext('2d');
+  var W = 0, H = 220;
+
+  function resize() {
+    W = canvas.width  = section.offsetWidth || window.innerWidth;
+    H = canvas.height = 220;
+  }
+  resize();
+  window.addEventListener('resize', function () { setTimeout(resize, 200); }, { passive: true });
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  var COLORS = [
+    [62,  220, 176],
+    [30,  144, 255],
+    [168, 85,  247],
+    [62,  220, 176],
+    [80,  200, 220],
+  ];
+
+  var NUM = 55;
+  var parts = [];
+
+  function mkPart(init) {
+    var ci = Math.floor(Math.random() * COLORS.length);
+    return {
+      x:   rand(0, W || 1400),
+      y:   init ? rand(H * 0.55, H + 10) : H + rand(2, 12),
+      vy:  rand(0.25, 0.9),
+      ph:  rand(0, Math.PI * 2),
+      ps:  rand(0.008, 0.022),
+      amp: rand(6, 24),
+      r:   rand(0.6, 2.1),
+      a:   rand(0.2, 0.72),
+      aD:  Math.random() > 0.5 ? 1 : -1,
+      aS:  rand(0.003, 0.008),
+      ci:  ci,
+      c:   COLORS[ci],
+    };
+  }
+
+  for (var i = 0; i < NUM; i++) parts.push(mkPart(true));
+
+  var isVisible = true;
+  var obs = new IntersectionObserver(function (entries) {
+    isVisible = entries[0].isIntersecting;
+  }, { threshold: 0 });
+  obs.observe(section);
+
+  var lastF = 0;
+
+  function draw(now) {
+    requestAnimationFrame(draw);
+    if (!isVisible) return;
+    if (now - lastF < 20) return;
+    lastF = now;
+
+    ctx.clearRect(0, 0, W, H);
+
+    for (var i = 0; i < NUM; i++) {
+      var p = parts[i];
+
+      p.ph += p.ps;
+      p.x  += Math.sin(p.ph) * p.amp * 0.016;
+      p.y  -= p.vy;
+
+      p.a += p.aS * p.aD;
+      if (p.a > 0.72 || p.a < 0.06) p.aD *= -1;
+
+      /* fade suave no topo do canvas */
+      var fadeAlpha = p.a * Math.min(1, p.y / (H * 0.55));
+
+      if (fadeAlpha < 0.004 || p.y < -4) {
+        parts[i] = mkPart(false);
+        continue;
+      }
+
+      var cs = p.c[0]+','+p.c[1]+','+p.c[2];
+      ctx.shadowColor = 'rgba('+cs+',0.8)';
+      ctx.shadowBlur  = p.r * 5;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba('+cs+','+fadeAlpha.toFixed(3)+')';
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+  }
+  requestAnimationFrame(draw);
+})();
